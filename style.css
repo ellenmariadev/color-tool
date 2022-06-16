@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Quicksand, sans-serif;
+  background: #2b303b;
+  color: #c0c5ce;
+}
+
+h1 {
+  font-weight: 400;
+  text-align: center;
+  margin: 20px;
+}
+
+.lighten {
+  font-weight: 600;
+  color: rgba(192, 197, 206, 0.6);
+}
+
+.darken {
+  font-weight: 600;
+  color: rgba(192, 197, 206, 0.8);
+}
+
+.detail {
+  font-weight: 300;
+}
+
+.container {
+  padding: 0px 10px;
+}
+
+label {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+input {
+  margin-bottom: 25px;
+}
+
+input[type="text"] {
+  padding: 5px 10px;
+  border-radius: 3px;
+  border: none;
+}
+
+.box {
+  height: 100px;
+  width: 100%;
+  background-color: #c0c5ce;
+  margin-bottom: 25px;
+}
