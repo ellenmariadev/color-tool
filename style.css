@@ -43,6 +43,10 @@ input {
   margin-bottom: 25px;
 }
 
+p {
+  margin-bottom: 5px;
+}
+
 input[type="text"] {
   padding: 5px 10px;
   border-radius: 3px;
