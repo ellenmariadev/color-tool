@@ -56,6 +56,52 @@ input[type="text"] {
 .box {
   height: 100px;
   width: 100%;
-  background-color: #c0c5ce;
+  background-color: #ffffff;
   margin-bottom: 25px;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.toogle-text {
+  font-size: 18px;
+}
+
+.toggle-btn {
+  width: 50px;
+  height: 20px;
+  background: #545862;
+  border-radius: 30px;
+  padding: 4px;
+  margin: 0 10px;
+}
+
+.inner-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #c0c5ce;
+  transition: all 250ms;
+}
+
+.toggle-btn.toggled > .inner-circle {
+  transform: translateX(30px);
+  background-color: #2b303b;
+}
+
+.unselected {
+  opacity: 0.25;
+}
+
+.alt-color {
+  display: flex;
+  gap: 10px;
+}
+
+.bi-clipboard:hover {
+  color: #c678dd;
+  cursor: pointer;
 }

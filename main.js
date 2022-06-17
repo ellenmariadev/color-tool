@@ -4,6 +4,10 @@ const alteredColor = document.querySelector('#alteredColor')
 const alteredColorText = document.querySelector('#alteredColorText')
 const slider = document.querySelector('#slider')
 const sliderText = document.querySelector('#sliderText')
+const lightenText = document.querySelector('#lightenText')
+const darkenText = document.querySelector('#darkenText')
+const toggleBtn = document.querySelector('#toggleBtn');
+const clipBoard = document.querySelector('#clipboard')
 
 hexInput.addEventListener('keyup', () => {
 
@@ -11,6 +15,7 @@ hexInput.addEventListener('keyup', () => {
 
     const strippedHex = hexInput.value.replace('#', '');
     inputColor.style.backgroundColor = "#" + strippedHex;
+    reset();
 })
 
 const isValidHex = (hex) => {
@@ -61,12 +66,43 @@ slider.addEventListener('input', () => {
 
     sliderText.textContent = `${slider.value}%`
 
-    const alteredHex = alterColor(hexInput.value, slider.value)
+    const valueAddition = toggleBtn.classList.contains('toggled') ? -slider.value : slider.value
+
+    const alteredHex = alterColor(hexInput.value, valueAddition)
 
     alteredColor.style.backgroundColor = alteredHex
 
     alteredColorText.innerText = `Altered Color ${alteredHex}`;
+
+    clipBoard.addEventListener("click", async () => {
+        await navigator.clipboard.writeText(alteredHex);
+    });
 })
+
+
+
+
+const reset = () => {
+    slider.value = 0;
+    sliderText.innerText = `0%`
+    alteredColor.style.backgroundColor = hexInput.value;
+    alteredColorText.innerText = `Altered Color ${hexInput.value}`;
+
+}
+
+toggleBtn.addEventListener('click', () => {
+    if (toggleBtn.classList.contains('toggled')) {
+        toggleBtn.classList.remove('toggled');
+        lightenText.classList.remove('unselected');
+        darkenText.classList.add('unselected');
+    } else {
+        toggleBtn.classList.add('toggled');
+        lightenText.classList.add('unselected');
+        darkenText.classList.remove('unselected');
+    }
+    reset();
+})
+
 
 const alterColor = (hex, percentage) => {
     const { r, g, b } = convertHexToRGB(hex);
@@ -84,3 +120,4 @@ const alterColor = (hex, percentage) => {
 const increase0To255 = (hex, amount) => {
     return Math.min(255, Math.max(0, hex + amount));
 }
+

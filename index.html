@@ -11,10 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;900&display=swap"
-        rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 
     <link rel="stylesheet" href="style.css">
 
@@ -27,13 +24,25 @@
             Tool
         </h1>
         <label for="hex">Color (Hex)</label>
-        <input type="text" name="hex" id="hexInput" placeholder="#000000" value="#c0c5ce">
+        <input type="text" name="hex" id="hexInput" placeholder="#000000" value="#ffffff">
+
+        <div class="toggle">
+            <p id="lightenText" class="toggle-text">Lighten</p>
+            <div class="toggle-btn" id="toggleBtn">
+                <div class="inner-circle"></div>
+            </div>
+            <p id="darkenText" class="toggle-text unselected">Darken</p>
+        </div>
 
         <label for="slider" id="sliderText">0%</label>
         <input type="range" min="0" max="100" value="0" class="slider" id="slider" name="slider">
         <p>Input Color</p>
         <div class="box" id="inputColor"></div>
-        <p id="alteredColorText">Altered Color</p>
+        <div class="alt-color">
+            <p id="alteredColorText">Altered Color</p>
+            <i id="clipboard" class="bi bi-clipboard"></i>
+
+        </div>
         <div class="box" id="alteredColor"></div>
     </main>
     <script src="main.js"></script>
