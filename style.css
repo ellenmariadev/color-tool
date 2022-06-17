@@ -5,8 +5,11 @@
 
 body {
   font-family: Quicksand, sans-serif;
+  height: 100vh;
   background: #2b303b;
   color: #c0c5ce;
+  display: flex;
+  justify-content: center;
 }
 
 h1 {
@@ -31,6 +34,8 @@ h1 {
 
 .container {
   padding: 0px 10px;
+  max-width: 800px;
+  align-self: center;
 }
 
 label {
@@ -48,16 +53,32 @@ p {
 }
 
 input[type="text"] {
-  padding: 5px 10px;
+  padding: 10px 0px;
   border-radius: 3px;
   border: none;
+  background-color: rgba(192, 197, 206, 0.6);
+  font-family: Quicksand, sans-serif;
+  color: #2b303b;
+  font-weight: 600;
+  text-align: center;
+  font-size: 16px;
+}
+
+input[type="text"]:focus {
+  outline: solid 2px #ffffffa8;
+}
+
+input[type="text"]::placeholder {
+  color: #c0c5ce;
 }
 
 .box {
-  height: 100px;
+  height: 90px;
   width: 100%;
-  background-color: #ffffff;
+  background-color: #c0c5ce;
   margin-bottom: 25px;
+  border-radius: 10px;
+  box-shadow: 11px 14px 5px 0px rgba(0, 0, 0, 0.18);
 }
 
 .toggle {
@@ -104,4 +125,50 @@ input[type="text"] {
 .bi-clipboard:hover {
   color: #c678dd;
   cursor: pointer;
+}
+
+.configs {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+
+.slider {
+  -webkit-appearance: none;
+  height: 10px;
+  background-color: #545862;
+  outline: none;
+  cursor: ew-resize;
+  border-radius: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 15px;
+  width: 10px;
+  background-color: #c678dd;
+  border-radius: 2px;
+}
+
+::selection {
+  background: #c678dd;
+  color: #ffffff;
+}
+
+.bi-paint-bucket {
+  margin-right: 10px;
+}
+
+.redesocial {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.redesocial a {
+  color: #c0c5ce;
+}
+
+.redesocial a:hover {
+  color: #c678dd;
 }

@@ -15,27 +15,30 @@
 
     <link rel="stylesheet" href="style.css">
 
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+
     <title>Color Tool</title>
 </head>
 
 <body>
     <main class="container">
-        <h1>Color <span class="lighten">Lighten</span><span class="detail">/</span><span class="darken">Darken</span>
-            Tool
-        </h1>
-        <label for="hex">Color (Hex)</label>
-        <input type="text" name="hex" id="hexInput" placeholder="#000000" value="#ffffff">
+        <h1><i class="bi bi-paint-bucket"></i>Color <span class="lighten">Lighten</span><span
+                class="detail">/</span><span class="darken">Darken</span> Tool </h1>
+        <div class="configs">
+            <label for="hex">Color (Hex)</label>
+            <input type="text" name="hex" id="hexInput" placeholder="#000000" value="#c0c5ce">
 
-        <div class="toggle">
-            <p id="lightenText" class="toggle-text">Lighten</p>
-            <div class="toggle-btn" id="toggleBtn">
-                <div class="inner-circle"></div>
+            <div class="toggle">
+                <p id="lightenText" class="toggle-text">Lighten</p>
+                <div class="toggle-btn" id="toggleBtn">
+                    <div class="inner-circle"></div>
+                </div>
+                <p id="darkenText" class="toggle-text unselected">Darken</p>
             </div>
-            <p id="darkenText" class="toggle-text unselected">Darken</p>
-        </div>
 
-        <label for="slider" id="sliderText">0%</label>
-        <input type="range" min="0" max="100" value="0" class="slider" id="slider" name="slider">
+            <label for="slider" id="sliderText">0%</label>
+            <input type="range" min="0" max="100" value="0" class="slider" id="slider" name="slider">
+        </div>
         <p>Input Color</p>
         <div class="box" id="inputColor"></div>
         <div class="alt-color">
@@ -44,7 +47,14 @@
 
         </div>
         <div class="box" id="alteredColor"></div>
+
+        <div class="redesocial">
+            <a href="https://github.com/ellenmariadev/color-tool"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/ellenmariadev/"><i class="bi bi-linkedin"></i></a>
+        </div>
+
     </main>
+
     <script src="main.js"></script>
 </body>
 
